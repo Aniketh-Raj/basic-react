@@ -3,9 +3,24 @@ import './App.css';
 import CharComponent from './CharValidation/CharComponent';
 import ValidationComp from './CharValidation/Validation';
 import Person from './Person/Person';
-import UserInput from './User/UserInput';
-import UserOutput from './User/UserOutput';
+import styled from 'styled-components';
 
+
+const StyledButton = styled.button`
+
+  background-color: ${props => props.alt ? 'red' : 'green'};
+  margin: 10px;
+  color: white;
+  font: inherit;
+  border: 2px solid blue;
+  padding: 10px;
+  cursor: pointer;
+
+  &:hover  {
+    background-color : ${props => props.alt ? 'blue' : 'lightGreen'};
+    color: yelllow;
+  }
+`;
 
 class App extends Component {
 
@@ -92,6 +107,20 @@ class App extends Component {
 
     let persons = null;
 
+    const buttonStyle = {
+      backgroundColor: 'green',
+      margin: '10px',
+      color: 'white',
+      font: 'inherit',
+      border: '2px solid blue',
+      padding: '10px',
+      cursor: 'pointer',
+      ':hover': {
+        backgroundColor : 'lightGreen',
+        color: 'yelllow',
+      }
+    }
+
     if (this.state.showUsers) {
       persons = (
         <div>
@@ -108,6 +137,12 @@ class App extends Component {
           }
         </div>
       );
+
+      buttonStyle.backgroundColor = 'red';
+      buttonStyle[':hover'] =  {
+        backgroundColor : 'pink',
+        color: 'blue',
+      }
     }
 
     let charCompJsx = null;
@@ -166,22 +201,24 @@ class App extends Component {
         );
     }
 
+    const cssClasses = [];
 
-    const buttonStyle = {
-      backgroundColor: 'white',
-      font: 'inherit',
-      border: '2px solid blue',
-      padding: '10px',
-      cursor: 'pointer',
+    if(this.state.persons.length <=2) {
+      cssClasses.push('red');
+    }
+    
+    if(this.state.persons.length <= 1) {
+      cssClasses.push('bold');
     }
 
     return (
       <div className="App">
         <h1>Hi, I am Aniketh</h1>
-        <button
-          style={buttonStyle}
+        <p className={cssClasses.join(' ')} >This working Amazing..!!</p>
+        <StyledButton
           onClick={this.togglePersonUsers}
-        >Toggle Users</button>
+          alt= {this.state.showUsers}
+        >Toggle Users</StyledButton>
 
         {persons}
 
