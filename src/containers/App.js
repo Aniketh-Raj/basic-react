@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import CharComponent from './CharValidation/CharComponent';
-import ValidationComp from './CharValidation/Validation';
-import Person from './Person/Person';
+import CharComponent from '../components/CharValidation/CharComponent';
+import ValidationComp from '../components/CharValidation/Validation';
+import Person from '../components/Persons/Person/Person';
 import styled from 'styled-components';
 
 
