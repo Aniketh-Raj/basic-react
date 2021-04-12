@@ -6,6 +6,10 @@
     font-weight: bold;
 }
 
+.Cockpit {
+    text-align: center;
+}
+
 .Cockpit button {
     background-color: green;
     color: white;
