@@ -1,4 +1,5 @@
 import React from 'react';
+import './Cockpit.css';
 import classes from './Cockpit.css';
 
 const cockpit = (props) => {
@@ -20,7 +21,7 @@ const cockpit = (props) => {
     }
 
     return (
-        <div className={classes.Cockpit}>
+        <div className="Cockpit">
             <h1>Hi, I am Aniketh</h1>
             <p className={cssClasses.join(' ')} >This working Amazing..!!</p>
             <button 
