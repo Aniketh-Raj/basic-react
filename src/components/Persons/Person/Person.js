@@ -16,6 +16,7 @@ const StyledComps = styled.div`
 `;
 
 const person = (props) => {
+    console.log('[Person.js] is rendering...')
     return (
         <StyledComps>
             <div className="Person">
